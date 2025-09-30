@@ -381,9 +381,9 @@ const LibraryPage = ({ results, creators, bundles, reviews_page_enabled, followi
             </span>
           </div>
         ) : null}
-        <div className="grid gap-y-8 gap-x-16 items-start grid-cols-1 lg:grid-cols-[1fr_3fr]">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
           {!showArchivedNotice && (hasParams || archivedCount > 0 || state.results.length > 9) ? (
-            <div className="stack">
+            <div className="stack lg:w-1/4 lg:flex-shrink-0">
               <header>
                 <div>
                   {filteredResults.length
@@ -522,7 +522,7 @@ const LibraryPage = ({ results, creators, bundles, reviews_page_enabled, followi
               ) : null}
             </div>
           ) : null}
-          <div className="product-card__column product-card__grid product-card-grid">
+          <div className="product-card__column product-card__grid product-card-grid lg:flex-1">
             {filteredResults.slice(0, resultsLimit).map((result) => (
               <Card
                 key={result.purchase.id}

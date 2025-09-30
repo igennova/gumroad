@@ -222,9 +222,9 @@ export const CardGrid = ({
   const [filetypesOpen, setFiletypesOpen] = React.useState(false);
 
   return (
-    <div className="grid gap-y-8 gap-x-16 items-start grid-cols-1 lg:grid-cols-[1fr_3fr]">
+    <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
       {hideFilters ? null : (
-        <div className="stack overflow-y-auto lg:sticky lg:inset-y-4 lg:max-h-[calc(100vh-2rem)]" aria-label="Filters">
+        <div className="stack overflow-y-auto lg:sticky lg:inset-y-4 lg:max-h-[calc(100vh-2rem)] lg:w-1/4 lg:flex-shrink-0" aria-label="Filters">
           <header>
             {title ?? "Filters"}
             {anyFilters ? (
@@ -344,12 +344,12 @@ export const CardGrid = ({
         </div>
       )}
       {results?.products.length === 0 ? (
-        <div className="placeholder">
+        <div className="placeholder lg:flex-1">
           <Icon name="archive-fill" />
           No products found
         </div>
       ) : (
-        <div>
+        <div className="lg:flex-1">
           <div className="product-card-grid" ref={gridRef}>
             {/* The first 4 images are above the fold, so we eagerily load them */}
             {results?.products.map((result, idx) => <Card key={result.permalink} product={result} eager={idx < 4} />) ??

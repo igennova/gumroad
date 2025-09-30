@@ -744,8 +744,8 @@ export const EmailForm = () => {
         }
       />
       <section className="space-y-4 p-4 md:p-8">
-        <div className="grid gap-y-8 gap-x-16 items-start grid-cols-1 lg:grid-cols-[1fr_3fr]">
-        <div className="space-y-6">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
+        <div className="space-y-6 lg:w-1/4 lg:flex-shrink-0">
 
           <div className="stack">
             <div>
@@ -811,7 +811,6 @@ export const EmailForm = () => {
               </fieldset>
             </div>
             <div>
-              </div>
               <fieldset role="group" className={cx({ danger: invalidFields.has("channel") })}>
                 <legend>Channel</legend>
                 {hasAudience ? (
@@ -1088,9 +1087,10 @@ export const EmailForm = () => {
               </fieldset>
             </div>
           </div>
-          <S3UploadConfigProvider value={s3UploadConfig}>
-            <EvaporateUploaderProvider value={evaporateUploader}>
-              <div className="override grid gap-6">
+          <div className="lg:flex-1">
+            <S3UploadConfigProvider value={s3UploadConfig}>
+              <EvaporateUploaderProvider value={evaporateUploader}>
+                <div className="override grid gap-6">
                 <fieldset className={cx({ danger: invalidFields.has("title") })}>
                   <input
                     ref={titleRef}
@@ -1137,8 +1137,9 @@ export const EmailForm = () => {
                   </FilesDispatchProvider>
                 </FilesProvider>
               </div>
-            </EvaporateUploaderProvider>
-          </S3UploadConfigProvider>
+              </EvaporateUploaderProvider>
+            </S3UploadConfigProvider>
+          </div>
         </div>
       </section>
     </div>

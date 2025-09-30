@@ -1,9 +1,9 @@
 <main class="p-4 md:p-8">
   <%= load_pack("api") %>
   <div>
-    <div class="grid gap-y-8 gap-x-16 items-start grid-cols-1 lg:grid-cols-[1fr_3fr]">
+    <div class="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
       <%= render "public/api/shared/navigation" %>
-      <article style="display: grid; gap: var(--spacer-6)">
+      <article class="lg:flex-1" style="display: grid; gap: var(--spacer-6)">
         <div class="stack" id="api-intro">
           <div>
             <p>

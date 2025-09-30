@@ -213,8 +213,8 @@ export const Checkout = ({
       />
       {isOpenTuple(cart.items, 1) ? (
         <div className="override grid gap-8 p-4 md:p-8">
-          <div className="grid gap-y-8 gap-x-16 items-start grid-cols-[2fr] auto-cols-[1fr] lg:grid-flow-col" style={{ gridAutoColumns: "minmax(26rem, 1fr)" }}>
-            <div className="override grid gap-6">
+          <div className="flex flex-col-reverse lg:flex-row gap-8 lg:gap-16 items-start">
+            <div className="override grid gap-6 lg:flex-[2]">
               <div className="cart" role="list">
                 {cart.items.map((item) => (
                   <CartItemComponent
@@ -356,7 +356,9 @@ export const Checkout = ({
                 </section>
               ) : null}
             </div>
-            <PaymentForm />
+            <div className="lg:flex-1">
+              <PaymentForm />
+            </div>
             {!isDesktop && <NavigationButton href={cart.returnUrl ?? discoverUrl}>Continue shopping</NavigationButton>}
           </div>
         </div>

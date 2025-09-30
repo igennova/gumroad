@@ -30,9 +30,9 @@ export const TemporaryLibrary = ({ results, canBuyerSignUp }: { results: Result[
     <div>
       <PageHeader title="Library" />
       <section className="p-4 md:p-8">
-        <div className="grid gap-y-8 gap-x-16 items-start grid-cols-1 lg:grid-cols-[1fr_3fr]">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
           {!user && canBuyerSignUp ? (
-            <div className="stack">
+            <div className="stack lg:w-1/4 lg:flex-shrink-0">
               <div>
                 <CreateAccountForm
                   createAccountData={{
@@ -47,7 +47,7 @@ export const TemporaryLibrary = ({ results, canBuyerSignUp }: { results: Result[
               </div>
             </div>
           ) : null}
-          <div className="product-card-grid">
+          <div className="product-card-grid lg:flex-1">
             {results.flatMap(({ result, item }) =>
               result.success && result.content_url ? (
                 result.bundle_products?.length ? (
