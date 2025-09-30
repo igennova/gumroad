@@ -213,7 +213,7 @@ export const Checkout = ({
       />
       {isOpenTuple(cart.items, 1) ? (
         <div className="override grid gap-8 p-4 md:p-8">
-          <div className="with-sidebar right lg:grid-flow-col" style={{ gridAutoColumns: "minmax(26rem, 1fr)" }}>
+          <div className="grid gap-y-8 gap-x-16 items-start grid-cols-[2fr] auto-cols-[1fr] lg:grid-flow-col" style={{ gridAutoColumns: "minmax(26rem, 1fr)" }}>
             <div className="override grid gap-6">
               <div className="cart" role="list">
                 {cart.items.map((item) => (

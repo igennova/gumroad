@@ -744,7 +744,9 @@ export const EmailForm = () => {
         }
       />
       <section className="space-y-4 p-4 md:p-8">
-        <div className="with-sidebar">
+        <div className="grid gap-y-8 gap-x-16 items-start grid-cols-1 lg:grid-cols-[1fr_3fr]">
+        <div className="space-y-6">
+
           <div className="stack">
             <div>
               <fieldset role="group">
@@ -809,6 +811,7 @@ export const EmailForm = () => {
               </fieldset>
             </div>
             <div>
+              </div>
               <fieldset role="group" className={cx({ danger: invalidFields.has("channel") })}>
                 <legend>Channel</legend>
                 {hasAudience ? (
